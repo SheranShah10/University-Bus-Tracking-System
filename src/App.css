@@ -1,0 +1,253 @@
+/* Global Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-bg: #f8f9fa;
+  --dark-text: #2c3e50;
+  --light-text: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+/* Navbar Styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text);
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Dashboard Stats */
+.stats-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stats-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stats-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+/* Schedule Styles */
+.schedule-table {
+  margin-bottom: 0;
+}
+
+.schedule-table thead th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 1rem;
+}
+
+.schedule-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.schedule-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.time-value {
+  font-weight: 500;
+  color: var(--dark-text);
+}
+
+.schedule-notes {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.schedule-notes ul {
+  margin-bottom: 0;
+}
+
+.schedule-notes ul ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.schedule-notes li {
+  margin-bottom: 0.75rem;
+}
+
+.schedule-notes li:last-child {
+  margin-bottom: 0;
+}
+
+/* Live Tracking */
+.map-placeholder {
+  background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+  border-radius: 10px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bus-list, .stop-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.bus-item, .stop-item {
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.bus-item:hover, .stop-item:hover {
+  transform: translateX(5px);
+}
+
+/* Contact Form */
+.form-control {
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Contact Info */
+.contact-info .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .stats-card {
+    margin-bottom: 1rem;
+  }
+  
+  .map-placeholder {
+    height: 300px;
+  }
+
+  .schedule-table {
+    font-size: 0.875rem;
+  }
+
+  .time-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card, .table, .form-control {
+  animation: fadeIn 0.5s ease-out;
+}
